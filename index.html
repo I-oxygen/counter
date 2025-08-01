@@ -6,6 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+
   <style>
     body {
       margin: 0;
@@ -20,14 +22,11 @@
       transition: background-color 3s ease, color 0.5s ease;
     }
 
-
-    .counter {
-  font-family: Embed code, sans-serif;
-  font-size: 100px;
-  font-weight: none;
-  border: 50px;
+.counter {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 96px;
+  font-weight: 700; /* 太めにしたいなら 700 */
 }
-
 
     .toggle {
       position: absolute;
@@ -95,7 +94,7 @@ function updateCounter() {
       updateCounter();
 
       const hue = Math.floor(Math.random() * 360);
-      const lightness = isDark ? 15 : 87;
+      const lightness = isDark ? 15 : 90;
       const newColor = `hsl(${hue}, 70%, ${lightness}%)`;
       document.body.style.backgroundColor = newColor;
     }
