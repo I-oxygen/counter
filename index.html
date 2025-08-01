@@ -81,12 +81,22 @@
     let isDark = false;
 function updateCounter() {
   const counter = document.getElementById('counter');
-  counter.innerText = (count < 0 ? '-' : '') + Math.abs(count);
+  counter.innerText = count.toString();
+
+  // 数字の大きさに応じてフォントサイズを調整
+  const baseSize = 100;
+  const shrinkFactor = Math.log10(Math.max(count, 1)) * 10; // 1以上でlog10
+  const newSize = Math.max(baseSize - shrinkFactor, 40); // 最小40px
+
+  counter.style.fontSize = `${newSize}px`;
+
+  // アニメーション
   counter.style.transform = 'scale(1.1)';
   setTimeout(() => {
     counter.style.transform = 'scale(1)';
   }, 100);
 }
+
 
 
     function handleTap() {
